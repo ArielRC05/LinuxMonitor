@@ -1,0 +1,19 @@
+{
+  "name": "linux_monitor",
+  "version": "1.0.0",
+  "description": "A command line tool that displays important info about the PC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.11.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "systeminformation": "^5.31.7"
+  }
+}
