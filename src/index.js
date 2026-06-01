@@ -1,5 +1,6 @@
 const settings = require('./config/settings');
 const getCpuData = require('./monitors/cpu')
+const getMemoryData = require('./monitors/memory')
 
 function testColor(num){
     if (num < settings.thresholdsColor.low.value) {
@@ -11,8 +12,10 @@ function testColor(num){
 
 async function main(){
     const cpuData = await getCpuData();
+    const memoryData = await getMemoryData();
 
     console.log(cpuData);
+    console.log(memoryData);
 }
 
 main();

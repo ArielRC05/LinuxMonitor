@@ -7,12 +7,12 @@ async function getCpuData() {
     const cpuLoad = await systemInfo.currentLoad(); //% of how busy is the CPU
     const cpuInfo = await systemInfo.cpu();// specs
 
-    const totalUse = cpuLoad.currentLoad;
-    const numberCores = cpuLoad.cpus.length;
-    const cpuBrand = cpuInfo.brand;
-    const cpuSpeed = cpuInfo.speed;
+    const totalUse = parseFloat(cpuLoad.currentLoad.toFixed(2));
+    const numberCores = cpuLoad.cpus.length; //number of cores
+    const cpuBrand = cpuInfo.brand; //brand name
+    const cpuSpeed = cpuInfo.speed; // ghz speed
 
-    const cLoads = cpuLoad.cpus.map(core => ({load: core.load}))
+    const cLoads = cpuLoad.cpus.map(core => ({load: parseFloat(core.load.toFixed(2))})) //load for every core
 
     return {
         usage: totalUse,
