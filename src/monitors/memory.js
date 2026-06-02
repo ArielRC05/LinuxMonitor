@@ -1,10 +1,7 @@
 //system information from npm package so it gets real linux data
 const systemInfo = require('systeminformation')
+const { bytesToGb } = require('../utils/formatter') //{} is to use just the function and not the whole module
 
-function bytesToGb(byteNum){
-    GB = byteNum * (10** -9);
-    return GB;
-}
 
 async function getMemoryData(){
     const memInfo = await systemInfo.mem(); //memory info in bytes: total, free, used, active, available etc
@@ -38,4 +35,4 @@ async function getMemoryData(){
 
 
 
-module.exports = getMemoryData; //for other files to use this
+module.exports = {getMemoryData}; //for other files to use this, the {} is to export just the function and not the whole module

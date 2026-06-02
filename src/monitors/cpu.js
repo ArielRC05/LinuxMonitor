@@ -12,7 +12,9 @@ async function getCpuData() {
     const cpuBrand = cpuInfo.brand; //brand name
     const cpuSpeed = cpuInfo.speed; // ghz speed
 
-    const cLoads = cpuLoad.cpus.map(core => ({load: parseFloat(core.load.toFixed(2))})) //load for every core
+    const cLoads = cpuLoad.cpus.map(core => ({ //load for every core
+        load: parseFloat(core.load.toFixed(2)
+    )})) 
 
     return {
         usage: totalUse,
@@ -24,4 +26,4 @@ async function getCpuData() {
 
 }
 
-module.exports = getCpuData; //for other files to use this
+module.exports = {getCpuData}; //for other files to use this, the {} is to export just the function and not the whole module
